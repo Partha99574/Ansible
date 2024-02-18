@@ -1,0 +1,10 @@
+---
+- name: this play displays "hello world"
+  hosts: localhost
+  tasks:
+    - name: displaying "hello world"
+      shell: echo "hello world"
+    - name: displaying wishes for the day
+      shell: echo "have a good day"
+
+...

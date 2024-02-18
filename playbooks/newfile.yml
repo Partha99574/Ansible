@@ -1,0 +1,18 @@
+---
+- name: Move file if not present in destination directory
+  hosts: localhost
+  tasks:
+  
+   - name: Create a file
+     command: touch /home/pheonix/playbooks/mumu.txt
+
+   - name: Check if the file exists in destination directory
+     stat:
+       path: /home/pheonix/mumu.txt
+     register: file_stat
+
+
+   - name: Move file to destination if not present 
+     command: mv /home/pheonix/playbooks/mumu.txt /home/pheonix
+     when: file_stat.stat.exists == false
+...

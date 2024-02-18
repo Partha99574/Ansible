@@ -1,0 +1,18 @@
+---
+# installing nginx and postgresql
+#
+- name: Install Nginx and PostgreSQL on local host
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: Install Nginx
+      dnf:
+        name: nginx
+        state: present
+    - name: Install PostgreSQL
+      dnf:
+        name: postgresql
+        state: present
+
+
+...
